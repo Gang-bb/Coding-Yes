@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.gangbb.model.dao.UserMapper">
+
+    <!--select查询语句-->
+   <select id="getUserList" resultType="com.gangbb.model.pojo.User">
+       select * from user
+   </select>
+
+   <select id="selectUserById" resultType="com.gangbb.model.pojo.User" parameterType="_int">
+        select * from user where id = #{id}
+   </select>
+
+   <insert id="insertUser">
+        insert into user(id, name, password) values (#{id},#{name},#{password});
+    </insert>
+
+    <update id="updateUser">
+        update user set name=#{name}, password=#{password} where id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from user where id=#{id};
+    </delete>
+
+    <insert id="addUser" parameterType="map">
+        insert  into user(id, name, password) values (#{uid},#{userName},#{password});
+    </insert>
+    <!--模糊查询-->
+    <select id="selectUserByKey" parameterType="string" resultType="com.gangbb.model.pojo.User">
+<!--        select * from user where name name like concat('%', #{key}, '%')-->
+<!--        select * from user where name  like "%"#{value}"%"-->
+            select * from user where name  like  CONCAT(CONCAT('%', #{key}), '%');
+    </select>
+
+</mapper>
