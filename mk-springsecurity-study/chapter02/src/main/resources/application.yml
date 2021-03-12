@@ -1,0 +1,28 @@
+logging:
+  level:
+    com:
+      gangbb: DEBUG
+    org:
+      springframework:
+        security: DEBUG
+  pattern:
+    console: '%clr(%d{E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+              %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+server:
+  # 默认错误网页提示
+  error:
+    whitelabel:
+      enabled: true
+  port: 8080
+
+spring:
+#  security:
+#    user:
+#      name: user
+#      password: 12345678
+#      roles: USER,ADMIN
+  messages:
+    basename: message
+    encoding: UTF-8
+  thymeleaf:
+    encoding: UTF-8
