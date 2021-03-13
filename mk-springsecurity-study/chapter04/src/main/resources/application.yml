@@ -1,0 +1,40 @@
+logging:
+  level:
+    com:
+      gangbb: DEBUG
+    org:
+      springframework:
+        security: DEBUG
+        data: DEBUG
+        jdbc:
+          core: TRACE
+  pattern:
+    console: '%clr(%d{E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+              %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+server:
+  port: ${SERVER_PORT:8080}
+
+
+spring:
+  ##### 通用配置  #####
+  application:
+    name: Gangbb-secutity
+  thymeleaf:
+    encoding: UTF-8
+  messages:
+    basename: message
+    encoding: UTF-8
+    always-use-message-format: false
+    fallback-to-system-locale: true
+    use-code-as-default-message: false
+  datasource:
+    # 当使用 嵌入式数据库(例如 H2数据库) 的时候加载resource目录下的 .sql 脚本， 使用别的例如 mysql 不加载
+    initialization-mode: embedded
+  profiles:
+    active: dev
+
+
+
+
+
+

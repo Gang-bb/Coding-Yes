@@ -1,0 +1,44 @@
+logging:
+  level:
+    com:
+      gangbb: DEBUG
+    org:
+      hibernate: DEBUG
+      springframework:
+        data: DEBUG
+        jdbc: DEBUG
+        security: DEBUG
+    web: DEBUG
+  pattern:
+    console: '%clr(%d{E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+              %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+spring:
+  datasource:
+    # 数据库驱动
+    driver-class-name: org.h2.Driver
+    # 数据库密码
+    password: ''
+    # 数据库连接url， 为了兼容mysql， 添加 MODE=MySQL
+    # DATABASE_TO_LOWER=TRUE 表名转小写
+    # CASE_INSENSITIVE_IDENTIFIERS=TRUE 不区分大小写
+    # DB_CLOSE_DELAY=-1 不自动关闭数据库连接
+    url: jdbc:h2:mem:test;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+  h2:
+    console:
+      # 是否显示 springboot内嵌 H2 UI管理界面
+      enabled: true
+      # 访问H2 UI管理界面的路径
+      path: /h2-console
+      settings:
+        # 禁止输出 Trace 信息
+        trace: false
+        # 禁止远程访问 H2 管理界面
+        web-allow-others: false
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+#  profiles:
+#      active: dev
