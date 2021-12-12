@@ -2,11 +2,8 @@ package com.gangbb.chapter05.rest;
 
 import com.gangbb.chapter05.domain.Auth;
 import com.gangbb.chapter05.domain.dto.LoginDto;
-import com.gangbb.chapter05.domain.dto.UserDto;
 import com.gangbb.chapter05.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 

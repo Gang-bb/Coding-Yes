@@ -1,13 +1,11 @@
 package com.gangbb.chapter05.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;

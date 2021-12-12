@@ -2,7 +2,6 @@ package com.gangbb.chapter05.util;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionUtil {

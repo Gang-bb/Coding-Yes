@@ -2,10 +2,8 @@ package com.gangbb.chapter03.rest;
 
 import com.gangbb.chapter03.domain.dto.UserDto;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.security.Principal;
 
 /**
  * @author : Gangbb

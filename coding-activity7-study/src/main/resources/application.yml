@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    session:
+      timeout: 9000
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/activity?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&nullCatalogMeansCurrent=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  activiti:
+    history-level: full
+    db-history-used: true
+    # 关闭自动部署，就是把新BPMN文件放到resource文件目录下，每次都会自动扫描部署
+    check-process-definitions: false

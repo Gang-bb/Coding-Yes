@@ -2,12 +2,9 @@ package com.gangbb.chapter02.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import java.util.List;
 
 /**
  * @author : Gangbb

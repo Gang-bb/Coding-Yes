@@ -2,7 +2,6 @@ package com.gangbb.chapter05.util;
 
 import com.gangbb.chapter05.domain.Role;
 import com.gangbb.chapter05.domain.User;
-import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -3,7 +3,6 @@ package com.gangbb.chapter03.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gangbb.chapter03.security.filter.RestAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
@@ -27,8 +26,6 @@ import org.zalando.problem.spring.web.advice.security.SecurityProblemSupport;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
  * @author : Gangbb

@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -21,8 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
  * @author : Gangbb
