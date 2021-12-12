@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_center?serverTimezone=UTC
+    hikari:
+      username: root
+      password: root
+      # >= 6.x: com.mysql.cj.jdbc.Driver
+      # <= 5.x: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        # 指定nacos的 server地址（不用写 http://）
+        server-addr: localhost:8848
+#        namespace: 125e1fa3-3861-4f1b-a67e-7a197611e2da
+#        # 假设北京机房集群
+#        cluster-name: BJ
+  application:
+    name: user-center
+
+

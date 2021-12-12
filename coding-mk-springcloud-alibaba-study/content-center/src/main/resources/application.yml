@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/content_center?serverTimezone=UTC
+    hikari:
+      username: root
+      password: root
+      # >= 6.x: com.mysql.cj.jdbc.Driver
+      # <= 5.x: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        # 指定nacos的 server地址（不用写 http://）
+        server-addr: localhost:8848
+  application:
+    name: content-center
+
+server:
+  port: 8010

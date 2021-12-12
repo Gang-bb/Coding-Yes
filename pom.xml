@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gangbb</groupId>
+    <artifactId>Coding-Yes</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>coding-bzhan-mybatis-study</module>
+        <module>coding-redis-study</module>
+        <module>coding-copybean-study</module>
+        <module>coding-docker-study</module>
+        <module>coding-dozer-study</module>
+        <module>coding-mk-springcloud-alibaba-study</module>
+        <module>coding-mk-java2020-multithreading-study</module>
+        <module>coding-mk-springcloud-course-study</module>
+        <module>coding-async-study</module>
+        <module>coding-batch-study</module>
+        <module>coding-desigin-pattern-study</module>
+        <module>coding-hutool-study</module>
+        <module>coding-list-study</module>
+        <module>coding-schedule-study</module>
+    </modules>
+
+
+</project>
