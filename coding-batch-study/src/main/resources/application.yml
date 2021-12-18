@@ -13,8 +13,9 @@ spring:
   profiles:
     active: mybatisplus,dev
   datasource:
-    url: jdbc:mysql://8.129.130.21:3306/manage-system?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
-    username: luqiao
-    password: luqiao
+    # &rewriteBatchedStatements=true
+    url: jdbc:mysql://localhost:3306/coding-yes?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true
+    username: root
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
