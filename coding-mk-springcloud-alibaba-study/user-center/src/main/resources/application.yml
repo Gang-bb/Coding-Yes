@@ -13,10 +13,11 @@ spring:
       discovery:
         # 指定nacos的 server地址（不用写 http://）
         server-addr: localhost:8848
-#        namespace: 125e1fa3-3861-4f1b-a67e-7a197611e2da
+#        namespace: 0190018d-6584-4250-943a-62c1c07ee365
 #        # 假设北京机房集群
-#        cluster-name: BJ
+        cluster-name: NJ
   application:
     name: user-center
 
-
+server:
+  port: 8012

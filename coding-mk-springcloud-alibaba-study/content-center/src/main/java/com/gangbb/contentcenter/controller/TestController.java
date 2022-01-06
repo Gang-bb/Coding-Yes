@@ -54,7 +54,7 @@ public class TestController {
     @GetMapping("test2")
     public List<ServiceInstance> getInstances() {
         // 查询指定服务的所有实例的信息
-        // consul/eureka/zookeeper...
+        // 用 consul/eureka/zookeeper...也能用这个方法
         return this.discoveryClient.getInstances("user-center");
     }
 

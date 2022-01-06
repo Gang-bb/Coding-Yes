@@ -12,8 +12,13 @@ spring:
       discovery:
         # 指定nacos的 server地址（不用写 http://）
         server-addr: localhost:8848
+        cluster-name: BJ
   application:
     name: content-center
 
 server:
   port: 8010
+
+#user-center:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
