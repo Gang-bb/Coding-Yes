@@ -2,7 +2,6 @@ package com.gangbb.contentcenter.controller;
 
 import com.gangbb.contentcenter.domain.vo.ShareVo;
 import com.gangbb.contentcenter.service.ShareService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/shares")
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ShareController {
-    private final ShareService shareService;
+    @Autowired
+    private ShareService shareService;
 
     @GetMapping("/{id}")
     public ShareVo findById(@PathVariable Integer id) {

@@ -10,7 +10,7 @@ import java.util.Date;
  * @Description:
  */
 @Data
-public class UserDto {
+public class UserDTO {
     /**
      * Id
      */

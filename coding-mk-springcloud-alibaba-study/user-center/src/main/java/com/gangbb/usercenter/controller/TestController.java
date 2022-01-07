@@ -29,4 +29,10 @@ public class TestController {
 
         return user;
     }
+
+    // q?id=1&wxId=aaa&...
+    @GetMapping("/q")
+    public User query(User user) {
+        return user;
+    }
 }

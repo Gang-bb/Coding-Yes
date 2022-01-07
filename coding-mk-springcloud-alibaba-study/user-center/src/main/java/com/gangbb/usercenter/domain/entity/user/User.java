@@ -1,8 +1,6 @@
 package com.gangbb.usercenter.domain.entity.user;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -10,9 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Table(name = "user")
 public class User {
     @Id

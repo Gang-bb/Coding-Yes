@@ -15,9 +15,9 @@ spring:
         server-addr: localhost:8848
 #        namespace: 0190018d-6584-4250-943a-62c1c07ee365
 #        # 假设北京机房集群
-        cluster-name: NJ
+        cluster-name: BJ
   application:
     name: user-center
 
 server:
-  port: 8012
+  port: 8030

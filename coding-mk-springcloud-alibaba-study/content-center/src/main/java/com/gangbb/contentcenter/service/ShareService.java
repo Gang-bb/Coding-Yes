@@ -1,9 +1,10 @@
 package com.gangbb.contentcenter.service;
 
 import com.gangbb.contentcenter.dao.content.ShareMapper;
-import com.gangbb.contentcenter.domain.dto.UserDto;
+import com.gangbb.contentcenter.domain.dto.UserDTO;
 import com.gangbb.contentcenter.domain.entity.content.Share;
 import com.gangbb.contentcenter.domain.vo.ShareVo;
+import com.gangbb.contentcenter.feignclient.UserCenterFeignClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -28,8 +29,12 @@ public class ShareService {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    private UserCenterFeignClient userCenterFeignClient;
+
+
     /**
-     * 使用ribbon负载均衡后
+     * 使用Feign调用
      * @param id
      * @return
      */
@@ -43,7 +48,7 @@ public class ShareService {
 
 
         // 找到发布人信息
-        UserDto userDto = this.restTemplate.getForObject("http://user-center/users/{userId}", UserDto.class, userId);
+        UserDTO userDto = this.userCenterFeignClient.findById(userId);
 
         // 信息装配
         ShareVo shareVo = new ShareVo();
@@ -52,6 +57,32 @@ public class ShareService {
 
         return shareVo;
     }
+
+
+    /**
+     * 使用ribbon负载均衡后
+     * @param id
+     * @return
+     */
+//    public ShareVo findById(Integer id){
+//
+//        // 通过share_id找到内容分享记录
+//        Share share = shareMapper.selectByPrimaryKey(id);
+//
+//        // 获取发布人id
+//        Integer userId = share.getUserId();
+//
+//
+//        // 找到发布人信息
+//        UserDto userDto = this.restTemplate.getForObject("http://user-center/users/{userId}", UserDto.class, userId);
+//
+//        // 信息装配
+//        ShareVo shareVo = new ShareVo();
+//        BeanUtils.copyProperties(share, shareVo);
+//        shareVo.setWxNickname(userDto.getWxNickname());
+//
+//        return shareVo;
+//    }
 
     /**
      *  使用随机负载均衡算法

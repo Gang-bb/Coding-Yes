@@ -2,7 +2,11 @@ package com.gangbb.contentcenter.controller;
 
 
 import com.gangbb.contentcenter.dao.content.ShareMapper;
+import com.gangbb.contentcenter.domain.dto.UserDTO;
 import com.gangbb.contentcenter.domain.entity.content.Share;
+import com.gangbb.contentcenter.feignclient.TestBaiduFeignClient;
+import com.gangbb.contentcenter.feignclient.TestUserCenterFeignClient;
+import com.gangbb.contentcenter.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -58,5 +62,36 @@ public class TestController {
         return this.discoveryClient.getInstances("user-center");
     }
 
+    @Autowired
+    private TestUserCenterFeignClient testUserCenterFeignClient;
+
+    @GetMapping("test-get")
+    public UserDTO query(UserDTO userDTO) {
+        return testUserCenterFeignClient.query(userDTO);
+    }
+
+
+    @Autowired
+    private TestBaiduFeignClient testBaiduFeignClient;
+
+    @GetMapping("baidu")
+    public String baiduIndex() {
+        return this.testBaiduFeignClient.index();
+    }
+
+    @Autowired
+    private TestService testService;
+
+    @GetMapping("test-a")
+    public String testA() {
+        this.testService.common();
+        return "test-a";
+    }
+
+    @GetMapping("test-b")
+    public String testB() {
+        this.testService.common();
+        return "test-b";
+    }
 
 }
