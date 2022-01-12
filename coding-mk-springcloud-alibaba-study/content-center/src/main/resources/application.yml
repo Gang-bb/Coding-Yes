@@ -14,6 +14,9 @@ spring:
         server-addr: localhost:8848
         cluster-name: BJ
     sentinel:
+      filter:
+        # 打开/关闭掉对Spring MVC端点的保护
+        enabled: true
       transport:
         #配置Sentinel dashboard地址
         dashboard: localhost:8080
@@ -38,6 +41,9 @@ logging:
     com.gangbb.contentcenter.feignclient: debug
 
 feign:
+  sentinel:
+    # 为feign整合sentinel
+    enabled: true
   client:
     config:
       # 想要调用的微服务名称
