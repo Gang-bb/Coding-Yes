@@ -1,3 +1,4 @@
+import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONUtil;
 
 import java.util.HashMap;
@@ -45,14 +46,11 @@ public class Test {
         robot.setParam(param);
 
         System.out.println(JSONUtil.toJsonPrettyStr(robot));
-//        String result1 = HttpRequest.post(ROBOT_URL)
-//                .body(JSONUtil.toJsonStr(robot), "application/json")
-//                .timeout(20000)//超时，毫秒
-//                .execute().body();
-//        System.out.println(result1);
-
-//        String post = HttpUtils.post(String.valueOf(stringObjectHashMap), ROBOT_URL);
-//        System.out.println(post);
+        String result1 = HttpRequest.post(ROBOT_URL)
+                .body(JSONUtil.toJsonStr(robot), "application/json")
+                .timeout(20000)//超时，毫秒
+                .execute().body();
+        System.out.println(result1);
 
 
     }
