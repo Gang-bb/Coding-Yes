@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,20 +46,21 @@ public class TestController {
     @GetMapping("/test")
     public List<Share> testInsert() {
         // 1. 做插入
-        Share share = new Share();
-        share.setCreateTime(new Date());
-        share.setUpdateTime(new Date());
-        share.setTitle("xxx");
-        share.setCover("xxx");
-        share.setAuthor("大目");
-        share.setBuyCount(1);
+//        Share share = new Share();
+//        share.setCreateTime(new Date());
+//        share.setUpdateTime(new Date());
+//        share.setTitle("xxx");
+//        share.setCover("xxx");
+//        share.setAuthor("大目");
+//        share.setBuyCount(1);
+//
+//        this.shareMapper.insertSelective(share);
+//
+//        // 2. 做查询: 查询当前数据库所有的share  select * from share ;
+//        List<Share> shares = this.shareMapper.selectAll();
 
-        this.shareMapper.insertSelective(share);
-
-        // 2. 做查询: 查询当前数据库所有的share  select * from share ;
-        List<Share> shares = this.shareMapper.selectAll();
-
-        return shares;
+//        return shares;
+        return null;
     }
 
     /**

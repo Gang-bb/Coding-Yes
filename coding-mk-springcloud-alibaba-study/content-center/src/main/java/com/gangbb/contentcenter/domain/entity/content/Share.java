@@ -1,6 +1,9 @@
 package com.gangbb.contentcenter.domain.entity.content;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -8,8 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Table(name = "share")
+@Builder
 public class Share {
     @Id
     @GeneratedValue(generator = "JDBC")

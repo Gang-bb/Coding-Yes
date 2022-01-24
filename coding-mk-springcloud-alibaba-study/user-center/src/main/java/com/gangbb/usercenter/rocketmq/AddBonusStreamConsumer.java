@@ -41,6 +41,6 @@ public class AddBonusStreamConsumer implements RocketMQListener<UserAddBonusMsgD
                 .event("contribute")
                 .description("投稿加积分")
                 .build());
-
+        log.info("积分添加完毕");
     }
 }
