@@ -21,3 +21,6 @@ spring:
 
 server:
   port: 8030
+
+rocketmq:
+  name-server: 127.0.0.1:9876
