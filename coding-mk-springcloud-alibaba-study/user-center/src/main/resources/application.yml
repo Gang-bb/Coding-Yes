@@ -16,6 +16,16 @@ spring:
 #        namespace: 0190018d-6584-4250-943a-62c1c07ee365
 #        # 假设北京机房集群
         cluster-name: BJ
+#    stream:
+#      rocketmq:
+#        binder:
+#          name-server: 127.0.0.1:9876
+#      bindings:
+#        bindings:
+#          input:
+#            # 用来指定topic
+#            destination: stream-test
+#            group: my-group
   application:
     name: user-center
 

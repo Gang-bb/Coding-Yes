@@ -13,6 +13,7 @@ import com.gangbb.contentcenter.domain.dto.UserDTO;
 import com.gangbb.contentcenter.domain.entity.content.Share;
 import com.gangbb.contentcenter.feignclient.TestBaiduFeignClient;
 import com.gangbb.contentcenter.feignclient.TestUserCenterFeignClient;
+import com.gangbb.contentcenter.rocketmq.MySource;
 import com.gangbb.contentcenter.sentineltest.TestControllerBlockHandlerClass;
 import com.gangbb.contentcenter.service.TestService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.messaging.support.MessageBuilder;
 
 import java.util.List;
 
@@ -180,5 +183,34 @@ public class TestController {
                         UserDTO.class, userId);
     }
 
+    @Autowired
+    private Source source;
+
+
+    @GetMapping("/test-stream")
+    public String testStream() {
+        this.source.output()
+                .send(
+                        MessageBuilder
+                                .withPayload("消息体")
+                                .build()
+                );
+        return "success";
+    }
+
+    @Autowired
+    private MySource mySource;
+
+
+    @GetMapping("/test-mySource")
+    public String testMySource() {
+        this.mySource.output()
+                .send(
+                        MessageBuilder
+                                .withPayload("消息体")
+                                .build()
+                );
+        return "success";
+    }
 
 }

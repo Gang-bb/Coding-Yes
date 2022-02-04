@@ -22,6 +22,19 @@ spring:
         dashboard: localhost:8080
         port: 8719
       web-context-unify: false
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+          group: tx-add-bonus-group
+      bindings:
+        output:
+          # 用来指定topic
+          destination: add-bonus
+          group: tx-add-bonus-group
+        my-output:
+          # 用来指定topic
+          destination: my-output-test
   application:
     name: content-center
 

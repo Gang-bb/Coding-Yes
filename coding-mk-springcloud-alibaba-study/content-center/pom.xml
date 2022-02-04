@@ -80,6 +80,11 @@
             <version>2.0.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!--视频4.3开始整合spring cloud-->
