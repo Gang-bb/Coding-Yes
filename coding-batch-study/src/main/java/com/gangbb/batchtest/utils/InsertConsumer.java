@@ -20,9 +20,9 @@ public class InsertConsumer {
     /**
      * 如果需要调整并发数目，修改下面方法的第二个参数即可
      */
-    static {
-        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "4");
-    }
+//    static {
+//        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "4");
+//    }
 
     /**
      * 插入方法

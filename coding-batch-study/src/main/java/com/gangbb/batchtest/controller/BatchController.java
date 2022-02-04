@@ -72,6 +72,9 @@ public class BatchController {
         return batchTestList;
     }
 
+    /**
+     *  搭配  &rewriteBatchedStatements=true使用 是最快的
+     */
     @PostMapping("/test/batch3")
     public String insertData3(@RequestParam int size) {
 
