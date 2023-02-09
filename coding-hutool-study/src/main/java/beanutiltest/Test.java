@@ -1,4 +1,5 @@
 package beanutiltest;
+import beanutiltest.UserOtherInfo;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
@@ -23,8 +24,21 @@ public class Test {
         user.setBirthday(new Date());
         user.setName("zhangsan");
 
-        UserVo userVo = BeanUtil.copyProperties(user, UserVo.class);
+//        UserVo userVo = BeanUtil.copyProperties(user, UserVo.class);
+//
+//        System.out.println(JSONUtil.parse(userVo));
 
-        System.out.println(JSONUtil.parse(userVo));
+        User user2 = new User();
+        user2.setUserOtherInfo(new UserOtherInfo());
+        user2.setName("www");
+        user2.setAge(110);
+        user2.setBirthday(new Date());
+
+        System.out.println(JSONUtil.parse(user));
+
+
+        BeanUtil.copyProperties(user, user2);
+
+        System.out.println(JSONUtil.parse(user));
     }
 }

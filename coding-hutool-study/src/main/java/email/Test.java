@@ -1,5 +1,7 @@
 package email;
 
+import cn.hutool.core.lang.Validator;
+
 /**
  * TODO:deprecated
  *
@@ -8,6 +10,6 @@ package email;
  **/
 public class Test {
     public static void main(String[] args) {
-
+        System.out.println(!Validator.isEmail("18475629@qq.com"));
     }
 }
