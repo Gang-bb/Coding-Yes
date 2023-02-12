@@ -29,6 +29,7 @@
         <module>coding-yunzhijia-study</module>
         <module>coding-enum-study</module>
         <module>coding-hongruan-study</module>
+        <module>coding-concurrency-study</module>
     </modules>
 
 
