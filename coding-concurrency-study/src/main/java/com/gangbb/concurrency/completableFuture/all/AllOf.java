@@ -43,5 +43,6 @@ public class AllOf {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        executor.shutdown();
     }
 }
